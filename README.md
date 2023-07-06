@@ -147,5 +147,6 @@ Since Fluentbit is now configured, it will collect logs from the different micro
 8. The applications in all three environments will be deployed in multiple availability zones and will exist in the private subnet for security. Load balancers will be setup in the public subnet to distribute incoming traffic to the necessary applications. The NAT gateway which I will connect with the private route table to allow the applications a secure access outside the VPC when updates and upgrades are required.   
 
 ![Alt text](<../Question 3.jpg>)
+https://github.com/Kachi79/interview-devops/edit/main/README.md#:~:text=1.2.3_log.txt-,Question,-3.jpg
 
 ##############################################################################
