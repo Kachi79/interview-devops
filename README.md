@@ -62,15 +62,15 @@ chmod +x updatepom.sh
 2. docker folder created in `my-api/src/main/` and `Dockerfile` defined in `my-api/src/main/docker/`
 
 ### Instructions for Building and Running the Project
-1. Add  `<directory>${project.basedir}/src/main/docker/target/</directory>`  project based directory parameter in the `pom.xml` file at `line 32` to tell maven where to create the target folder and deploy the jar file during the build stage. Recall we created a `Dockerfile` in the `src/main/docker` folder to enable the artifact to be containerized since the target folder will be in the same location as the `Dockerfile`.
+1. Add  `<directory>${project.basedir}/src/main/docker/target/</directory>`  project based directory parameter in the `pom.xml` file at `line 32` to tell maven where to create the target folder and deploy the jar file during the build stage. Recall we created a **Dockerfile** in the `src/main/docker` folder to enable the artifact to be containerized since the target folder will be in the same location as the **Dockerfile**.
 
-2. Add your `AWS ECR image address` in the `pom.xml` through the `imageName` parameter. See `lines 74-76` of the `pom.xml` file.
-3. Pass your `repository url` in `line 86`.
-4. Add the `pushImage` parameter with a value of `true` in line `97`
-5. login to your container repository (dockerhub.io or AWS ECR). 
-6. to login to dockerhub.io, enter `docker login` in your terminal and provide your username and password.
-7. to login to AWS ECR, navigate to your AWS ECR page, select your repository (public or private) to activate the `view push command`. click on the `view push command`
-8. copy the first command:
+2. Add your **AWS ECR image address** in the `pom.xml` through the `imageName` parameter. See `lines 74-76` of the `pom.xml` file.
+3. Pass your **repository url** in `line 86`.
+4. Add the `pushImage` parameter with a value of `true` in `line 97`
+5. Login to your container repository (dockerhub.io or AWS ECR). 
+6. To login to dockerhub.io, enter `docker login` in your terminal and provide your username and password.
+7. To login to AWS ECR, navigate to your AWS ECR page, select your repository (public or private) to activate the **view push command**. click on the `view push command`
+8. Copy the first command:
 ```
 aws ecr get-login-password --region YOUR_AWS_REGION | docker login --username AWS --password-stdin YOUR_AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com
 ```
@@ -113,7 +113,7 @@ Prerequisites:
 
 Steps
 * cd to the logging-stack folder
-* update the docker-compose.yaml file to include the image created in 1.2 (`see docker-compose.yaml file for details`)
+* update the docker-compose.yaml file to include the image created in 1.2 (see `docker-compose.yaml` file for details)
 * ensure the fluentd-address is `localhost:24224`
 * Run to create the EFK stack 
 ```
@@ -131,7 +131,7 @@ docker network inspect logging-stack_correvate | tee custombridgenetwork.txt
 * Click on the `Discovery` tab to see the logs as required.
 
 Deliverables
-* Updated logging-stack/ project according to requirements (`see docker-compose.yaml`)
+* Updated logging-stack/ project according to requirements (see `docker-compose.yaml`)
 * Logs generated and saved to `1.3_logs.txt` using
 ```
 docker-compose –no-ansi logs | tee 1.3_log.txt
@@ -179,15 +179,15 @@ The code development stage is where the actual implementation of the SaaS applia
 ### Here are the high level steps I will take to address the teams need of a centralized logging solution for their distributed application.
                                     
 
-1. I will `familiarise myself with the existing set up` to get a good understanding of the current architecture. If the existing architecture is robust enough with `high availability` and `security`, I will build the new setup in the `already existing network infrastructure`. So the final infrastructure will run in the `same VPC`. I will also develop basic `Terraform` templates (if not already available)to `enable flexible deployment` of the planned infrastructure.
+1. I will **familiarise myself with the existing set up** to get a good understanding of the current architecture. If the existing architecture is robust enough with **high availability** and **security**, I will build the new setup in the **already existing network infrastructure**. So the final infrastructure will run in the `same VPC`. I will also develop basic `Terraform` templates (if not already available)to `enable flexible deployment` of the planned infrastructure.
 
-2. First I will set up the `AWS Elastic Search domain` to `achieve` a `centralized storage location` for the log data from both enviroments in the already existing setup. The infrastructure will consist of the `AWS ES domain` and `AWS Fargate running kibana and tooling apps`. To achieve `high availability`, this setup will be provisioned in `two availability zones`. To ensure network `security`, all services in this setup will be provisioned in the `private subnet` with a `loadbalancer` in  the `public subnet`, listening to incoming traffic. A `main account` will also be setup with `IAM roles` and `policy permissions` for `resources` and `users`. 
+2. First I will set up the `AWS Elastic Search domain` to achieve a **centralized storage location** for the log data from both enviroments in the already existing setup. The infrastructure will consist of the `AWS ES domain` and `AWS Fargate running kibana and tooling apps`. To achieve `high availability`, this setup will be provisioned in **two availability zones**. To ensure network `security`, all services in this setup will be provisioned in the `private subnet` with a `loadbalancer` in  the `public subnet`, listening to incoming traffic. A `main account` will also be setup with `IAM roles` and `policy permissions` for **resources** and **users**. 
 
-3. To avoid `downtime` in Production, I will `migrate the QA Environment`, since it is identical to PROD by resources provisioned in them. All QA team users will be `moved to PROD and assigned permissions` according to their `roles` so they can access the same resources in the PROD environment until the QA environment is fully setup.
+3. To avoid `downtime` in Production, I will `migrate the QA Environment`, since it is identical to PROD by resources provisioned in them. All QA team users will be moved to `PROD and assigned permissions` according to their **roles** so they can access the same resources in the PROD environment until the QA environment is fully setup.
 
-4. During the `QA setup`, I will `increase the compute and storage resources` for the `auto-scaled EC2 instances` the PROD environment to accommodate the impact of QA testing. I will do this by increasing the number of `desired instances` in the auto-scaling group configuration. 
+4. During the `QA setup`, I will **increase the compute and storage resources** for the `auto-scaled EC2 instances` the PROD environment to accommodate the impact of QA testing. I will do this by increasing the number of `desired instances` in the auto-scaling group configuration. 
 
-5. In the `QA environment`, I will `replace cloud watch with Fluentbit` and `move Fluentbit and the other existing infrastructure` to the `private subnet`. A `load balancer` in the `public subnet` will be listening and `distributing traffic` to `all applications` in the `private subnet`. The `QA environment` will be able to get regular updates and upgrades via a `NAT gateway`, connected to the `private route-table` once the setup is complete. 
+5. In the `QA environment`, I will replace `cloud watch with Fluentbit` and move `Fluentbit and the other existing infrastructure` to the `private subnet`. A `load balancer` in the `public subnet` will be listening and `distributing traffic` to **all applications** in the `private subnet`. The `QA environment` will be able to get regular updates and upgrades via a `NAT gateway`, connected to the `private route-table` once the setup is complete. 
 
 6. While the `QA environment` is undergoing this migration, the `PROD environment` will continue to use `cloudwatch` until the QA is fully setup with the ability to search and read the logs in an aggregated fashion using the kibana dashboard. Once the QA setup is complete and `connected to AWS ES domain via the fluentbit configuration`, all users (QA and PROD) will be migrated to the QA environment with the necessary IAM roles and permissions assigned.
 I will repeat the process from step 3 to completion for the PROD environment. This time the QA environment becomes the PROD until PROD is fully setup. 
