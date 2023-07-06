@@ -1,0 +1,5 @@
+REPOSITORY                                               TAG                     IMAGE ID       CREATED         SIZE
+<none>                                                   <none>                  0f75798c37d8   7 minutes ago   465MB
+046660960196.dkr.ecr.eu-west-2.amazonaws.com/kadiya_22   latest                  a561075a6629   7 minutes ago   242MB
+openjdk                                                  11-jre-slim             764a04af3eff   11 months ago   223MB
+maven                                                    3.8.4-openjdk-11-slim   da9a1aaba88d   16 months ago   446MB

@@ -1,0 +1,77 @@
+# Specifies the version of the Docker Compose file format being used. In this case, it is version 2.2. The version determines the syntax and features available in the Compose file.
+
+version: '2.2'
+
+# Declare named volumes that can be used by services in the Compose file. Name the volume. esdata is the name in this case.
+# Declare the volume driver used for the volume. Since we are running the stack locally, we will manage the volume on docker host locally
+volumes:
+  esdata:
+    driver: local
+
+# define custom network you want your services to use. Here correvate is the chosen network
+networks:
+  correvate:
+    
+# declare members  of the ELK or EFK stack. This should include the storage service (elasticsearch), 
+# the viewing service (kibana), the log processor and forwarder service (fluentbit) and the user-application (in this case the image i built in section 1.2)
+# ensure the image url, volume, ports and network is declared. 
+# point to note is that docker-compose is not for production grade deployment because it can only be provisioned in a single node.
+# kubernetes is a better option
+# if you are deploying to the cloud, ensure all declared ports are open for inbound connectivity.
+# you can verify that all containers are on the same network by entering `docker network ls` and looking into the network with `docker network inspect NETWORK_NAME
+services:
+  # Elasticsearch
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.8.0
+    environment:
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+    networks:
+      - correvate
+  # Kibana
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.8.0
+    ports:
+      - 5601:5601
+    environment:
+      ELASTICSEARCH_URL: http://elasticsearch:9200
+      ELASTICSEARCH_HOSTS: http://elasticsearch:9200
+    networks:
+      - correvate
+
+  # Log processor & forwarder
+  fluentbit:
+    build: fluentbit/.
+    ports:
+      - "24224:24224"
+      - "24224:24224/udp"
+    networks:
+      - correvate
+
+# This application was built in section 1.2
+# This image was pushed to AWS ECR so you must establish connection by login in with the command in `view push command` tab
+# in AWS ECR before `pull requests` can be approved
+# Since we will be collecting  the app logs with fluentbit and viewing locally, ensure you map `localhost` to the fluentbit port 2424 as below.
+# Also ensure the network is the same with the other services for seamless connectivity
+# fluentd must be declared as the driver even if we are required to use fluentbit.
+
+  # Application
+  efk-app:
+    image: public.ecr.aws/k9e8p9k0/inventadenos_pub:latest
+    depends_on:
+      - fluentbit
+    ports:
+      - 8080:8080
+    logging:
+      driver: fluentd
+      options:
+        fluentd-address: localhost:24224
+    networks:
+      - correvate  
+
+
+# run the containers with `docker-compose -d --build` and login to kibana on http://localhost:5601 to view logs

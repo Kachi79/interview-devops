@@ -1,0 +1,36 @@
+#1 [fluentbit internal] load build definition from Dockerfile
+#1 transferring dockerfile: 103B done
+#1 ...
+
+#2 [fluentbit internal] load .dockerignore
+#2 transferring context: 2B 0.0s done
+#2 DONE 0.3s
+
+#1 [fluentbit internal] load build definition from Dockerfile
+#1 DONE 0.3s
+
+#3 [fluentbit internal] load metadata for docker.io/fluent/fluent-bit:1.5.0
+#3 ...
+
+#4 [fluentbit auth] fluent/fluent-bit:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [fluentbit internal] load metadata for docker.io/fluent/fluent-bit:1.5.0
+#3 DONE 3.8s
+
+#5 [fluentbit 1/2] FROM docker.io/fluent/fluent-bit:1.5.0@sha256:6319f19fd1934c8edeee3bbc410ab731f762544c776d4299885213d70bfae9ae
+#5 DONE 0.0s
+
+#6 [fluentbit internal] load build context
+#6 transferring context: 37B done
+#6 DONE 0.0s
+
+#7 [fluentbit 2/2] ADD fluent-bit.conf /fluent-bit/etc/
+#7 CACHED
+
+#8 [fluentbit] exporting to image
+#8 exporting layers done
+#8 writing image sha256:44bc54d386cdd7667b97132ddc6b9b7a28c7e18087e2844c64057a2cf62b058d done
+#8 naming to docker.io/library/logging-stack-fluentbit
+#8 naming to docker.io/library/logging-stack-fluentbit 0.1s done
+#8 DONE 0.1s
