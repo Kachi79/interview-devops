@@ -24,7 +24,7 @@ java -jar my-api-1.0.0.1591234567.jar | tee .. 1.0.2_log.txt
 ```
 
 Change directory to your target folder where you have your jar file and ensure your output log file is in the same folder as your jar file. In this command, `java -jar my-api-1.0.0.1591234567.jar` runs the jar artifact while  `| tee .. 1.0.2_log.txt` sends the full output log to `1.0.2_log.txt`.
-Output log files `1.0.1_log.txt` stored in `my-api/` folder and `1.0.2_log.txt` is stored in `my-api/target/` folder.
+Output log files `1.0.1_log.txt` and `1.0.2_log.txt`are stored in `my-api/` folder.
 list of output logs for 1.0: 
  #### 1.0.1_log.txt 
  #### 1.0.2_log.txt
