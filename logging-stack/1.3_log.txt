@@ -1,36 +1,33 @@
-#1 [fluentbit internal] load build definition from Dockerfile
-#1 transferring dockerfile: 103B done
-#1 ...
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 103B 0.0s done
+#1 DONE 0.0s
 
-#2 [fluentbit internal] load .dockerignore
-#2 transferring context: 2B 0.0s done
-#2 DONE 0.3s
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.0s
 
-#1 [fluentbit internal] load build definition from Dockerfile
-#1 DONE 0.3s
-
-#3 [fluentbit internal] load metadata for docker.io/fluent/fluent-bit:1.5.0
+#3 [internal] load metadata for docker.io/fluent/fluent-bit:1.5.0
 #3 ...
 
-#4 [fluentbit auth] fluent/fluent-bit:pull token for registry-1.docker.io
+#4 [auth] fluent/fluent-bit:pull token for registry-1.docker.io
 #4 DONE 0.0s
 
-#3 [fluentbit internal] load metadata for docker.io/fluent/fluent-bit:1.5.0
-#3 DONE 3.8s
+#3 [internal] load metadata for docker.io/fluent/fluent-bit:1.5.0
+#3 DONE 1.8s
 
-#5 [fluentbit 1/2] FROM docker.io/fluent/fluent-bit:1.5.0@sha256:6319f19fd1934c8edeee3bbc410ab731f762544c776d4299885213d70bfae9ae
+#5 [internal] load build context
+#5 transferring context: 231B done
 #5 DONE 0.0s
 
-#6 [fluentbit internal] load build context
-#6 transferring context: 37B done
-#6 DONE 0.0s
+#6 [1/2] FROM docker.io/fluent/fluent-bit:1.5.0@sha256:6319f19fd1934c8edeee3bbc410ab731f762544c776d4299885213d70bfae9ae
+#6 CACHED
 
-#7 [fluentbit 2/2] ADD fluent-bit.conf /fluent-bit/etc/
-#7 CACHED
+#7 [2/2] ADD fluent-bit.conf /fluent-bit/etc/
+#7 DONE 0.9s
 
-#8 [fluentbit] exporting to image
-#8 exporting layers done
-#8 writing image sha256:44bc54d386cdd7667b97132ddc6b9b7a28c7e18087e2844c64057a2cf62b058d done
-#8 naming to docker.io/library/logging-stack-fluentbit
-#8 naming to docker.io/library/logging-stack-fluentbit 0.1s done
-#8 DONE 0.1s
+#8 exporting to image
+#8 exporting layers 0.0s done
+#8 writing image sha256:b7de5903a17807a328dc382b069700eb2eeebd9575ad0e812bdbde178919bf22
+#8 writing image sha256:b7de5903a17807a328dc382b069700eb2eeebd9575ad0e812bdbde178919bf22 done
+#8 naming to docker.io/library/logging-stack-fluentbit done
+#8 DONE 0.0s

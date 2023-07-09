@@ -1,8 +1,8 @@
 [
     {
         "Name": "logging-stack_correvate",
-        "Id": "75691ef6c551c78d4e6cbc9a613d38d33706fa13b431276c56a63797d5cc4b16",
-        "Created": "2023-07-06T03:11:35.122736468Z",
+        "Id": "c164f3f5537196467b68d16df9fea204a9e6dff6f83f4626046188bd43968816",
+        "Created": "2023-07-05T23:20:29.726633739Z",
         "Scope": "local",
         "Driver": "bridge",
         "EnableIPv6": false,
@@ -11,8 +11,8 @@
             "Options": null,
             "Config": [
                 {
-                    "Subnet": "172.19.0.0/16",
-                    "Gateway": "172.19.0.1"
+                    "Subnet": "172.23.0.0/16",
+                    "Gateway": "172.23.0.1"
                 }
             ]
         },
@@ -24,32 +24,32 @@
         },
         "ConfigOnly": false,
         "Containers": {
-            "133e2cae087c56353c2bae7ab0e5fa3630861d3d40860a3087e6a6fb6bf4755c": {
+            "0591e727b909b1d9d83de93da33204288ef552dbb97f4a72d5f33b21dae4ba4f": {
                 "Name": "logging-stack-fluentbit-1",
-                "EndpointID": "f0271dd2512bdd8ae8a4e29590e418205942fc93ea42007488631ba02149ec59",
-                "MacAddress": "02:42:ac:13:00:03",
-                "IPv4Address": "172.19.0.3/16",
+                "EndpointID": "f8101f134ebabfdd4fb1a0f2edb631ce871bb30f178748729e255d67e9217e37",
+                "MacAddress": "02:42:ac:17:00:04",
+                "IPv4Address": "172.23.0.4/16",
                 "IPv6Address": ""
             },
-            "306983b5bf783b98b466362e4710bf05f1a090338f19c6031c59bca287b14e9a": {
-                "Name": "logging-stack-EFK_APP-1",
-                "EndpointID": "a3d6dd5352ad92db9a258bc615d2a6804fd4e076050dc1fd679bf58bd3ab0132",
-                "MacAddress": "02:42:ac:13:00:05",
-                "IPv4Address": "172.19.0.5/16",
-                "IPv6Address": ""
-            },
-            "89f5a1e41f26356059c0c2791f41ed77881ab9d981092fce680e393fac04939d": {
+            "502461e0426527662d47d5ce142c84e30af43db33c102c5ea90c52580d696dd4": {
                 "Name": "logging-stack-kibana-1",
-                "EndpointID": "5d4d6c806dd91d34c926482e5f6545b3b370ada33bdf38ec4c5f79aa5124f12d",
-                "MacAddress": "02:42:ac:13:00:02",
-                "IPv4Address": "172.19.0.2/16",
+                "EndpointID": "4783e7f01d5de04916a0fd28ecd5a0f2b12df24b4507237d8e916aa05bdaa3ca",
+                "MacAddress": "02:42:ac:17:00:02",
+                "IPv4Address": "172.23.0.2/16",
                 "IPv6Address": ""
             },
-            "9eabe6d80002b0a0689bf5457abe7422a17a01290ca0000d33fd6c7afa6ec297": {
+            "a5d1ed1dee4e3f56e347b37d10cec3a50545499ef723e498b6fc62a61aa9dff1": {
+                "Name": "logging-stack-efk-app-1",
+                "EndpointID": "ef8f30804ff665816adbaf9bb570c56abaad0dc3e88d686766ab6de867e1d1a4",
+                "MacAddress": "02:42:ac:17:00:05",
+                "IPv4Address": "172.23.0.5/16",
+                "IPv6Address": ""
+            },
+            "f273579305b79f2ddb0531d905bfaab63b3891deb7c9a1cd34d4be03e621f7b5": {
                 "Name": "logging-stack-elasticsearch-1",
-                "EndpointID": "f113a4cce269f393f59d034bf894cbf869dc2a48baae048b11cbebe15a1bb742",
-                "MacAddress": "02:42:ac:13:00:04",
-                "IPv4Address": "172.19.0.4/16",
+                "EndpointID": "4ce9117a94ba6b17b744165c77306653ddc1ffe97d03fd313fe0bda0a1737bc9",
+                "MacAddress": "02:42:ac:17:00:03",
+                "IPv4Address": "172.23.0.3/16",
                 "IPv6Address": ""
             }
         },
@@ -57,7 +57,7 @@
         "Labels": {
             "com.docker.compose.network": "correvate",
             "com.docker.compose.project": "logging-stack",
-            "com.docker.compose.version": "2.18.1"
+            "com.docker.compose.version": "2.15.1"
         }
     }
 ]

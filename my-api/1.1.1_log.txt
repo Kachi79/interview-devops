@@ -1,0 +1,72 @@
+pom.xml updated with version 1.0.1 1688928905
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< uk.co.correvate.hr.devops:my-api >------------------
+[INFO] Building my-api 1.0.1.1688928905
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ my-api ---
+[INFO] Deleting /Users/onyekachianyanwu/Desktop/TEST/interview-devops/my-api/target
+[INFO] 
+[INFO] --- spring-boot:2.3.1.RELEASE:build-info (default) @ my-api ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ my-api ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ my-api ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 1 source file to /Users/onyekachianyanwu/Desktop/TEST/interview-devops/my-api/target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ my-api ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /Users/onyekachianyanwu/Desktop/TEST/interview-devops/my-api/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ my-api ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 1 source file to /Users/onyekachianyanwu/Desktop/TEST/interview-devops/my-api/target/test-classes
+[INFO] 
+[INFO] --- surefire:3.1.2:test (default-test) @ my-api ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ my-api ---
+[INFO] Building jar: /Users/onyekachianyanwu/Desktop/TEST/interview-devops/my-api/target/my-api-1.0.1.1688928905.jar
+[INFO] 
+[INFO] --- spring-boot:2.3.1.RELEASE:repackage (default) @ my-api ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] 
+[INFO] --- install:3.1.1:install (default-install) @ my-api ---
+[INFO] Installing /Users/onyekachianyanwu/Desktop/TEST/interview-devops/my-api/pom.xml to /Users/onyekachianyanwu/.m2/repository/uk/co/correvate/hr/devops/my-api/1.0.1.1688928905/my-api-1.0.1.1688928905.pom
+[INFO] Installing /Users/onyekachianyanwu/Desktop/TEST/interview-devops/my-api/target/my-api-1.0.1.1688928905.jar to /Users/onyekachianyanwu/.m2/repository/uk/co/correvate/hr/devops/my-api/1.0.1.1688928905/my-api-1.0.1.1688928905.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.974 s
+[INFO] Finished at: 2023-07-09T19:55:10+01:00
+[INFO] ------------------------------------------------------------------------
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.3.1.RELEASE)
+
+19:55:11.533 [main] INFO  u.c.c.hr.devops.DevopsTestApp - Starting DevopsTestApp on Onyekachis-MacBook-Pro.local with PID 65063 (/Users/onyekachianyanwu/Desktop/TEST/interview-devops/my-api/target/my-api-1.0.1.1688928905.jar started by onyekachianyanwu in /Users/onyekachianyanwu/Desktop/TEST/interview-devops/my-api/target)
+19:55:11.537 [main] INFO  u.c.c.hr.devops.DevopsTestApp - No active profile set, falling back to default profiles: default
+19:55:13.387 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+19:55:13.401 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+19:55:13.401 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+19:55:13.401 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+19:55:13.489 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+19:55:13.489 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1808 ms
+19:55:13.728 [main] INFO  u.c.c.hr.devops.DevopsTestApp - Starting awesome application uk.co.correvate.hr.devops:my-api:1.0.1.1688928905 ...
+19:55:13.878 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+19:55:14.123 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+19:55:14.143 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+19:55:14.181 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+19:55:14.197 [main] INFO  u.c.c.hr.devops.DevopsTestApp - Started DevopsTestApp in 3.297 seconds (JVM running for 3.899)

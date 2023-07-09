@@ -1,2 +1,2 @@
-CONTAINER ID   IMAGE                                                    COMMAND                  CREATED              STATUS              PORTS                    NAMES
-1d348c55957f   046660960196.dkr.ecr.eu-west-2.amazonaws.com/kadiya_22   "java -jar /app/my-a…"   About a minute ago   Up About a minute   0.0.0.0:8080->8080/tcp   elk_stack
+CONTAINER ID   IMAGE                                                           COMMAND                  CREATED          STATUS          PORTS                    NAMES
+e995bb06d63c   046660960196.dkr.ecr.eu-west-2.amazonaws.com/kadiya_22:latest   "java -jar /app/my-a…"   36 seconds ago   Up 36 seconds   0.0.0.0:8080->8080/tcp   EFK_STACK

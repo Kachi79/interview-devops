@@ -1,0 +1,48 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< uk.co.correvate.hr.devops:my-api >------------------
+[INFO] Building my-api 1.0.0.1591234567
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ my-api ---
+[INFO] Deleting /Users/onyekachianyanwu/Desktop/TEST/interview-devops/my-api/target
+[INFO] 
+[INFO] --- spring-boot:2.3.1.RELEASE:build-info (default) @ my-api ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ my-api ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ my-api ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 1 source file to /Users/onyekachianyanwu/Desktop/TEST/interview-devops/my-api/target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ my-api ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /Users/onyekachianyanwu/Desktop/TEST/interview-devops/my-api/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ my-api ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 1 source file to /Users/onyekachianyanwu/Desktop/TEST/interview-devops/my-api/target/test-classes
+[INFO] 
+[INFO] --- surefire:3.1.2:test (default-test) @ my-api ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ my-api ---
+[INFO] Building jar: /Users/onyekachianyanwu/Desktop/TEST/interview-devops/my-api/target/my-api-1.0.0.1591234567.jar
+[INFO] 
+[INFO] --- spring-boot:2.3.1.RELEASE:repackage (default) @ my-api ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] 
+[INFO] --- install:3.1.1:install (default-install) @ my-api ---
+[INFO] Installing /Users/onyekachianyanwu/Desktop/TEST/interview-devops/my-api/pom.xml to /Users/onyekachianyanwu/.m2/repository/uk/co/correvate/hr/devops/my-api/1.0.0.1591234567/my-api-1.0.0.1591234567.pom
+[INFO] Installing /Users/onyekachianyanwu/Desktop/TEST/interview-devops/my-api/target/my-api-1.0.0.1591234567.jar to /Users/onyekachianyanwu/.m2/repository/uk/co/correvate/hr/devops/my-api/1.0.0.1591234567/my-api-1.0.0.1591234567.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.596 s
+[INFO] Finished at: 2023-07-09T19:50:14+01:00
+[INFO] ------------------------------------------------------------------------

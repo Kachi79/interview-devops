@@ -55,13 +55,13 @@ services:
 # This application was built in section 1.2
 # This image was pushed to AWS ECR so you must establish connection by login in with the command in `view push command` tab
 # in AWS ECR before `pull requests` can be approved
-# Since we will be collecting  the app logs with fluentbit and viewing locally, ensure you map `localhost` to the fluentbit port 2424 as below.
+# Since we will be collecting  the app logs with fluentbit and viewing locally, ensure you map `localhost` to the fluentbit port 24224 as below.
 # Also ensure the network is the same with the other services for seamless connectivity
-# fluentd must be declared as the driver even if we are required to use fluentbit.
+# fluentd must be declared as the logging driver even if we are required to use fluentbit.
 
   # Application
   efk-app:
-    image: public.ecr.aws/k9e8p9k0/inventadenos_pub:latest
+    image: 046660960196.dkr.ecr.eu-west-2.amazonaws.com/kadiya_22:latest 
     depends_on:
       - fluentbit
     ports:

@@ -9,7 +9,7 @@ WORKDIR /app
 # the WORKDIR command allows you to delare your work directory.
 # the work directory is where you deploy the files and packages you want to run
 
-COPY target/my-api-1.0.1.1688594630.jar /app/
+COPY target/my-api-1.0.1.1688928905.jar /app/
 # the COPY command allows you to copy the artifact or any other file to a specified directory
 # in this case, we are copying the jar file from the target folder in our local repository to the workdir in the container
 
@@ -21,16 +21,16 @@ FROM openjdk:11-jre-slim
 WORKDIR /app
 # again we declare the work directory
 
-COPY --from=builder /app/my-api-1.0.1.1688594630.jar /app/
+COPY --from=builder /app/my-api-1.0.1.1688928905.jar /app/
 # we now copy the compiled application in the AS builder image to the work directory in the final image
 
 EXPOSE 8080
 # EXPOSE command assigns a port to the container.
 
-CMD ["java", "-jar", "/app/my-api-1.0.1.1688594630.jar"]
+CMD ["java", "-jar", "/app/my-api-1.0.1.1688928905.jar"]
 #CMD sets the command at runtime
 #CMD is a runtime command because it only becomes active at runtime.
 # runtime is when a container is being started from an image
 # CMD can be bypassed  by passing a command in the terminal during the runtime stage
 # here, we declare the application type (java), give the run flag (-jar), 
-# and the location/name the jar artifact to be started (/app/my-api-1.0.1.1688594630.jar)
+# and the location/name the jar artifact to be started (/app/my-api-1.0.1.1688928905.jar)
